@@ -54,7 +54,7 @@ const { TextArea } = Input;
 const { Dragger } = Upload;
 const { TabPane } = Tabs;
 
-const BASE_API = "http://127.0.0.1:5000/predict";
+const BASE_API = "https://udithak-fyp.hf.space/predict";
 
 const LandingPage = () => {
   const [text, setText] = useState("");
@@ -182,7 +182,7 @@ const LandingPage = () => {
 
       try {
         const response = await axios.post(
-          "http://127.0.0.1:5000/predict/batch",
+          "https://udithak-fyp.hf.space/predict/batch",
           formData,
           {
             headers: {
