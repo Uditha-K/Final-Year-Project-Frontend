@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { Form, Input, Button, Card, Typography, Divider, message } from "antd";
 import { GoogleOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
 import { useNavigate, Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const { Title, Text } = Typography;
 
@@ -37,7 +38,7 @@ const Login = () => {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        background: "#f0f2f5",
+        backgroundColor: "#f0f2f5",
       }}
     >
       <Card
@@ -47,7 +48,21 @@ const Login = () => {
           boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
         }}
       >
-        <Title level={3} style={{ textAlign: "center", marginBottom: 30 }}>
+        <div style={{ textAlign: "center", marginBottom: 10 }}>
+          <img
+            src={logo}
+            alt="App Logo"
+            style={{
+              width: 140,
+              maxWidth: "100%",
+              height: "auto",
+              objectFit: "contain",
+              background: "#f0f2f5",
+            }}
+          />
+        </div>
+
+        <Title level={3} style={{ textAlign: "center", marginBottom: 20 }}>
           Welcome Back! Please Login
         </Title>
         <Form layout="vertical" onFinish={handleEmailLogin}>

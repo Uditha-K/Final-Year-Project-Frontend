@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Form, Input, Button, Card, Typography, message, Row, Col } from "antd";
 import { useNavigate, Link } from "react-router-dom";
 import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
+import logo from "../assets/logo.png";
 
 const { Title, Text } = Typography;
 
@@ -51,12 +52,25 @@ const Register = () => {
           boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
         }}
       >
-        <Title level={3} style={{ textAlign: "center", marginBottom: 24 }}>
+        <div style={{ textAlign: "center", marginBottom: 10 }}>
+          <img
+            src={logo}
+            alt="App Logo"
+            style={{
+              width: 140,
+              maxWidth: "100%",
+              height: "auto",
+              objectFit: "contain",
+              backgroundColor: "#f0f2f5",
+            }}
+          />
+        </div>
+
+        <Title level={3} style={{ textAlign: "center", marginBottom: 20 }}>
           Create Account
         </Title>
 
         <Form layout="vertical" onFinish={onFinish} requiredMark={false}>
-          {/* First & Last Name Row */}
           <Row gutter={16}>
             <Col span={12}>
               <Form.Item
