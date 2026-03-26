@@ -3,6 +3,7 @@ import axios from "axios";
 import { auth } from "../firebaseConfig";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 import {
   Layout,
@@ -84,7 +85,7 @@ const LandingPage = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      message.success("Logged out successfully");
+      message.success("Logged out successfully!");
       navigate("/login");
     } catch {
       message.error("Error logging out");
@@ -273,9 +274,21 @@ const LandingPage = () => {
           padding: "0 24px",
         }}
       >
-        <Title level={3} style={{ margin: 0 }}>
-          TELCO SENTIMENT ANALYZER
-        </Title>
+        <Space align="center">
+          <img
+            src={logo}
+            alt="logo"
+            style={{
+              height: 100,
+              width: 100,
+              objectFit: "contain",
+            }}
+          />
+
+          <Title level={3} style={{ margin: 0 }}>
+            TELCO SENTIMENT ANALYZER
+          </Title>
+        </Space>
 
         {user && (
           <Space>
@@ -344,7 +357,7 @@ const LandingPage = () => {
                   </Space>
                 </TabPane>
 
-                <TabPane tab="Bulk File Upload" key="2">
+                <TabPane tab="File Upload" key="2">
                   <Space direction="vertical" style={{ width: "100%" }}>
                     <div style={{ textAlign: "center" }}>
                       <Title level={2}>Batch Sentiment Analysis</Title>
